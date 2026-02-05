@@ -61,7 +61,7 @@
                                 </svg>
                             </div>
                             <input type="email" id="email" name="email" value="{{ old('email') }}"
-                                class="input-field pl-16" placeholder="Masukkan email petugas" required>
+                                class="input-field !pl-16" placeholder="Masukkan email petugas" required>
                         </div>
                     </div>
 
@@ -76,7 +76,7 @@
                                         d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                                 </svg>
                             </div>
-                            <input type="password" id="password" name="password" class="input-field pl-16 pr-12"
+                            <input type="password" id="password" name="password" class="input-field !pl-16 pr-12"
                                 placeholder="Masukkan password" required>
                             <button type="button" onclick="togglePassword()"
                                 class="absolute inset-y-0 right-0 pr-4 flex items-center">
