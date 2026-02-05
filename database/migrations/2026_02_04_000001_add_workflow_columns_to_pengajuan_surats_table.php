@@ -28,8 +28,10 @@ return new class extends Migration {
         });
 
         // Modify status enum to include 'diproses'
-        // Note: MySQL enum modification - we'll use raw SQL
-        DB::statement("ALTER TABLE pengajuan_surats MODIFY COLUMN status ENUM('pending', 'verifikasi', 'proses', 'diproses', 'ttd', 'selesai', 'ditolak') DEFAULT 'pending'");
+        // Note: MySQL enum modification - we'll use raw SQL only if not sqlite
+        if (DB::getDriverName() !== 'sqlite') {
+            DB::statement("ALTER TABLE pengajuan_surats MODIFY COLUMN status ENUM('pending', 'verifikasi', 'proses', 'diproses', 'ttd', 'selesai', 'ditolak') DEFAULT 'pending'");
+        }
     }
 
     /**
