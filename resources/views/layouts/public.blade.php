@@ -11,7 +11,7 @@
     <title>@yield('title', 'Desa Katingan') - Portal Layanan Desa</title>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="{{ asset('logo-desa.png') }}">
+    <link rel="icon" type="image/png" href="{{ asset('favicon.png') }}">
 
     <!-- Google Fonts - Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
