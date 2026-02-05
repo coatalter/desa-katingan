@@ -12,11 +12,19 @@ return new class extends Migration {
     public function up(): void
     {
         Schema::table('pengajuan_surats', function (Blueprint $table) {
-            // Add missing columns for surat workflow
-            $table->text('keterangan')->nullable()->after('keperluan');
-            $table->string('nomor_surat', 100)->nullable()->after('catatan_admin');
-            $table->foreignId('processed_by')->nullable()->constrained('users')->onDelete('set null')->after('diproses_oleh');
-            $table->timestamp('processed_at')->nullable()->after('processed_by');
+            // Add missing columns for surat workflow if they don't exist
+            if (!Schema::hasColumn('pengajuan_surats', 'keterangan')) {
+                $table->text('keterangan')->nullable()->after('keperluan');
+            }
+            if (!Schema::hasColumn('pengajuan_surats', 'nomor_surat')) {
+                $table->string('nomor_surat', 100)->nullable()->after('catatan_admin');
+            }
+            if (!Schema::hasColumn('pengajuan_surats', 'processed_by')) {
+                $table->foreignId('processed_by')->nullable()->constrained('users')->onDelete('set null')->after('diproses_oleh');
+            }
+            if (!Schema::hasColumn('pengajuan_surats', 'processed_at')) {
+                $table->timestamp('processed_at')->nullable()->after('processed_by');
+            }
         });
 
         // Modify status enum to include 'diproses'
