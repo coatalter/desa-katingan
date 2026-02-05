@@ -18,70 +18,82 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         // Create Kepala Desa
-        User::create([
-            'name' => 'H. Ahmad Sulaiman',
-            'email' => 'kades@desakatingan.id',
-            'password' => Hash::make('password123'),
-            'nik' => '6201010101000001',
-            'no_hp' => '081234567890',
-            'role' => 'kepala_desa',
-            'is_active' => true,
-        ]);
+        User::firstOrCreate(
+            ['email' => 'kades@desakatingan.id'],
+            [
+                'name' => 'H. Ahmad Sulaiman',
+                'password' => Hash::make('password123'),
+                'nik' => '6201010101000001',
+                'no_hp' => '081234567890',
+                'role' => 'kepala_desa',
+                'is_active' => true,
+            ]
+        );
 
         // Create Sekretaris Desa
-        User::create([
-            'name' => 'Hj. Siti Aminah',
-            'email' => 'sekdes@desakatingan.id',
-            'password' => Hash::make('password123'),
-            'nik' => '6201010101000002',
-            'no_hp' => '081234567891',
-            'role' => 'sekretaris',
-            'is_active' => true,
-        ]);
+        User::firstOrCreate(
+            ['email' => 'sekdes@desakatingan.id'],
+            [
+                'name' => 'Hj. Siti Aminah',
+                'password' => Hash::make('password123'),
+                'nik' => '6201010101000002',
+                'no_hp' => '081234567891',
+                'role' => 'sekretaris',
+                'is_active' => true,
+            ]
+        );
 
         // Create Kaur Pemerintahan
-        User::create([
-            'name' => 'Bambang Wijaya',
-            'email' => 'kaur.pemerintahan@desakatingan.id',
-            'password' => Hash::make('password123'),
-            'nik' => '6201010101000003',
-            'no_hp' => '081234567892',
-            'role' => 'kaur_pemerintahan',
-            'is_active' => true,
-        ]);
+        User::firstOrCreate(
+            ['email' => 'kaur.pemerintahan@desakatingan.id'],
+            [
+                'name' => 'Bambang Wijaya',
+                'password' => Hash::make('password123'),
+                'nik' => '6201010101000003',
+                'no_hp' => '081234567892',
+                'role' => 'kaur_pemerintahan',
+                'is_active' => true,
+            ]
+        );
 
         // Create Kaur Keuangan
-        User::create([
-            'name' => 'Dewi Lestari',
-            'email' => 'kaur.keuangan@desakatingan.id',
-            'password' => Hash::make('password123'),
-            'nik' => '6201010101000004',
-            'no_hp' => '081234567893',
-            'role' => 'kaur_keuangan',
-            'is_active' => true,
-        ]);
+        User::firstOrCreate(
+            ['email' => 'kaur.keuangan@desakatingan.id'],
+            [
+                'name' => 'Dewi Lestari',
+                'password' => Hash::make('password123'),
+                'nik' => '6201010101000004',
+                'no_hp' => '081234567893',
+                'role' => 'kaur_keuangan',
+                'is_active' => true,
+            ]
+        );
 
         // Create Kaur Umum
-        User::create([
-            'name' => 'Rudi Hartono',
-            'email' => 'kaur.umum@desakatingan.id',
-            'password' => Hash::make('password123'),
-            'nik' => '6201010101000005',
-            'no_hp' => '081234567894',
-            'role' => 'kaur_umum',
-            'is_active' => true,
-        ]);
+        User::firstOrCreate(
+            ['email' => 'kaur.umum@desakatingan.id'],
+            [
+                'name' => 'Rudi Hartono',
+                'password' => Hash::make('password123'),
+                'nik' => '6201010101000005',
+                'no_hp' => '081234567894',
+                'role' => 'kaur_umum',
+                'is_active' => true,
+            ]
+        );
 
         // Create Sample Warga User
-        $wargaUser = User::create([
-            'name' => 'Budi Santoso',
-            'email' => 'budi@email.com',
-            'password' => Hash::make('password123'),
-            'nik' => '6201010115010001',
-            'no_hp' => '081234567895',
-            'role' => 'warga',
-            'is_active' => true,
-        ]);
+        $wargaUser = User::firstOrCreate(
+            ['email' => 'budi@email.com'],
+            [
+                'name' => 'Budi Santoso',
+                'password' => Hash::make('password123'),
+                'nik' => '6201010115010001',
+                'no_hp' => '081234567895',
+                'role' => 'warga',
+                'is_active' => true,
+            ]
+        );
 
         // Create Penduduk data
         $pendudukData = [
