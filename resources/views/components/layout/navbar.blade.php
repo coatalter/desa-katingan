@@ -5,11 +5,8 @@
             <!-- Logo -->
             <a href="{{ route('home') }}" class="flex items-center gap-3 group">
                 <div
-                    class="w-12 h-12 bg-gradient-to-br from-primary-600 to-primary-700 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow">
-                    <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                    </svg>
+                    class="w-12 h-12 overflow-hidden rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow">
+                    <img src="{{ asset('logo-desa.png') }}" alt="Logo Desa" class="w-full h-full object-cover">
                 </div>
                 <div>
                     <h1 class="text-xl font-bold text-gray-900">Desa Katingan</h1>
