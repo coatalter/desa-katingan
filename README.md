@@ -1,59 +1,84 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Sistem Informasi & Administrasi Desa Katingan
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Aplikasi berbasis web untuk digitalisasi administrasi desa, layanan publik, dan profil desa Katingan. Dikembangkan menggunakan **Laravel** dan **Tailwind CSS**.
 
-## About Laravel
+## ✨ Fitur Utama
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+### 1. Dashboard Admin Desa
+- **Login Multi-role**: Mendukung role Kepala Desa, Sekretaris, dan Kaur (Pemerintahan, Keuangan, Umum).
+- **Statistik Penduduk**: Visualisasi data demografi (umur, pendidikan, pekerjaan).
+- **Manajemen Data**: CRUD Data Penduduk dan Keluarga (Kartu Keluarga).
+- **Surat Digital**: Workflow pengajuan surat dari "Verifikasi" -> "Proses" -> "Tanda Tangan" -> "Selesai" (Upload PDF).
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### 2. Portal Layanan Publik (Warga)
+- **Pengajuan Surat Online**: Warga dapat mengajukan surat (Domisili, Usaha, Kelahiran, dll) dari rumah.
+- **Tracking Status**: Pelacakan status pengajuan real-time menggunakan kode unik (Resi).
+- **Download Dokumen**: Unduh surat hasil yang sudah ditandatangani langsung dari portal.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### 3. Profil Desa
+- **Informasi Publik**: Visi Misi, Sejarah, Struktur Organisasi, dan Geografis.
+- **Potensi Desa**: Galeri interaktif wisata dan UMKM desa.
+- **Berita & Pengumuman**: Update kegiatan desa terbaru.
 
-## Learning Laravel
+## 🛠️ Teknologi yang Digunakan
+- **Backend**: Laravel 11 (PHP 8.2+)
+- **Frontend**: Blade Templating + Tailwind CSS
+- **Database**: MySQL
+- **Server**: Apache/Nginx (Local) / FrankenPHP (Production/Railway)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+## 🚀 Instalasi & Menjalankan (Lokal)
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Prasyarat
+- PHP 8.2 atau lebih baru
+- Composer
+- Node.js & NPM
+- MySQL
 
-## Laravel Sponsors
+### Langkah-langkah
+1. **Clone Repository**
+   ```bash
+   git clone https://github.com/username/desa-katingan.git
+   cd desa-katingan
+   ```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+2. **Install Dependencies**
+   ```bash
+   composer install
+   npm install
+   ```
 
-### Premium Partners
+3. **Konfigurasi Environment**
+   Salin file `.env.example` ke `.env` dan atur database.
+   ```bash
+   cp .env.example .env
+   php artisan key:generate
+   ```
+   *Edit file `.env` dan sesuaikan DB_DATABASE, DB_USERNAME, DB_PASSWORD sesuai settingan MySQL lokal Anda.*
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+4. **Migrasi Database & Seeder**
+   ```bash
+   php artisan migrate --seed
+   ```
+   *Akun Admin Default:*
+   - Email: `kades@desakatingan.id`
+   - Password: `password123`
 
-## Contributing
+5. **Jalankan Aplikasi**
+   Buka dua terminal berbeda:
+   ```bash
+   # Terminal 1 (Backend)
+   php artisan serve
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+   # Terminal 2 (Frontend Build/Watch)
+   npm run dev
+   ```
+   Akses di browser: `http://localhost:8000`
 
-## Code of Conduct
+## ☁️ Deployment (Railway)
+Panduan lengkap deployment ke Railway dapat dilihat di file `deployment_guide.md` atau `artifacts/deployment_guide.md`.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## 📸 Screenshots
+*(Tangkapan layar dashboard, portal warga, dan fitur tracking)*
 
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## 📄 Lisensi
+[MIT License](https://opensource.org/licenses/MIT).
