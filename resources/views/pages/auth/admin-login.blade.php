@@ -79,7 +79,6 @@
                             </div>
                             <input type="password" id="password" name="password" class="input-field pl-16 pr-12"
                                 style="padding-left: 3.5rem;" placeholder="Masukkan password" required>
-                            placeholder="Masukkan password" required>
                             <button type="button" onclick="togglePassword()"
                                 class="absolute inset-y-0 right-0 pr-4 flex items-center">
                                 <svg id="eye-icon" class="w-5 h-5 text-gray-400 hover:text-gray-600" fill="none"
