@@ -105,7 +105,7 @@
                                         </svg>
                                     </a>
                                     @if($p->status === 'pending')
-                                        <form action="{{ route('admin.surat.process', $p) }}" method="POST" class="inline">
+                                        <form action="{{ route('admin.surat.proceed', $p) }}" method="POST" class="inline">
                                             @csrf
                                             <button type="submit"
                                                 class="p-1.5 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded"
